@@ -1,0 +1,18 @@
+
+<form method='post'>{% csrf_token %}
+
+<table>
+{{sign_in_form.as_table}}
+</table>
+
+<br>
+
+<a href="{% url 'forgot_password' %}" class="text-body">Forgot password?</a>
+
+<button class="btn btn-primary btn-lg" type='submit'>Login</button>
+
+<p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="{% url 'sign_up' %}"
+class="link-danger">Register</a></p>
+
+
+</form>

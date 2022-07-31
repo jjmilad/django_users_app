@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% load static %}
+{<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}">
+</head>
+
+{% block content %}
+
+<body>
+
+<div class='container'>
+  <div class='rounded title-box'>
+    <h1 class='title text-white'>Edit Account</h1>
+  </div>
+
+
+    <div class="col-12">
+      <div class="card bg-light" style='height: auto; margin-top: 20px;'>
+        <div class="card-body">
+          <form method='post' enctype="multipart/form-data" >{% csrf_token %}
+            {{edit_user_form}}
+            <br><br>
+            <input type='submit' class='btn btn-primary form-control'>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <center><h2>Edit Your Password:</h2></center>
+    <div style='text-align: center'>
+    <button class='btn'><a href="{% url 'edit_password' %}">Edit Password</a></button>
+    <button class='btn'><a href="{% url 'forgot_password' %}">Forgot Password</a></button>
+    </div>
+    <br>
+
+</div>
+
+{% endblock %}

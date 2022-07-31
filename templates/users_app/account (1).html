@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% load static %}
+{<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}">
+</head>
+
+{% block content %}
+
+<body>
+
+<div class='container'>
+  <div class='rounded title-box'>
+    <h1 class='title text-white'>Account</h1>
+  </div>
+
+<div class='row' style='margin-left: 0px;'>
+
+  <div class='col info bg-light rounded'>
+    <h4>User Info:</h4>
+    <h5>Full Name: {{user.0}} {{user.1}}</h5>
+    <h5>Email: {{user.5}}</h5>
+    <h5>Nation: {{user.2}}</h5>
+    <h5>Joined at :{{user.3}}</h5>
+  </div>
+
+  <img src='{{photo}}' class='col rounded' style='margin-top: 20px; height: auto; max-width: 600px; max-height: 400px;'>
+
+
+</div>
+<br>
+<div style='text-align: center;'>
+<a class='btn btn-primary' href="{% url 'sign_in'%}" style='color: white; text-decoration: None;'>Change account</a>
+<a class='btn btn-primary' href="{% url 'edit_user'%}" style='color: white; text-decoration: None;'>Edit Account</a>
+<a class='btn btn-primary' href="{% url 'user_log_out' %}" style='color: white; text-decoration: None;'>Log Out</a>
+</div>
+<br>
+
+
+</div>
+
+{% endblock %}
